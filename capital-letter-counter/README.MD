@@ -1,0 +1,1 @@
+Zlicza ile jest dużych liter w liniach

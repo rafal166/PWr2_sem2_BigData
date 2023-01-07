@@ -1,0 +1,64 @@
+2022-12-07 08:01:02,589 INFO mapreduce.Job: Counters: 56
+        File System Counters
+                FILE: Number of bytes read=15854638777
+                FILE: Number of bytes written=22386641627
+                FILE: Number of read operations=0
+                FILE: Number of large read operations=0
+                FILE: Number of write operations=0
+                HDFS: Number of bytes read=6509076373
+                HDFS: Number of bytes written=75
+                HDFS: Number of read operations=152
+                HDFS: Number of large read operations=0
+                HDFS: Number of write operations=2
+                HDFS: Number of bytes read erasure-coded=0
+        Job Counters
+                Failed reduce tasks=1
+                Killed map tasks=1
+                Launched map tasks=50
+                Launched reduce tasks=2
+                Data-local map tasks=50
+                Total time spent by all maps in occupied slots (ms)=4269165
+                Total time spent by all reduces in occupied slots (ms)=1363156
+                Total time spent by all map tasks (ms)=4269165
+                Total time spent by all reduce tasks (ms)=1363156
+                Total vcore-milliseconds taken by all map tasks=4269165
+                Total vcore-milliseconds taken by all reduce tasks=1363156
+                Total megabyte-milliseconds taken by all map tasks=4371624960
+                Total megabyte-milliseconds taken by all reduce tasks=1395871744
+        Map-Reduce Framework
+                Map input records=931147496
+                Map output records=931147496
+                Map output bytes=4655737480
+                Map output materialized bytes=6518032766
+                Input split bytes=5439
+                Combine input records=0
+                Combine output records=0
+                Reduce input groups=6
+                Reduce shuffle bytes=6518032766
+                Reduce input records=931147496
+                Reduce output records=6
+                Spilled Records=3196095669
+                Shuffled Maps =49
+                Failed Shuffles=0
+                Merged Map outputs=49
+                GC time elapsed (ms)=1809
+                CPU time spent (ms)=5911419
+                Physical memory (bytes) snapshot=30210494464
+                Virtual memory (bytes) snapshot=36378206208
+                Total committed heap usage (bytes)=27166507008
+                Peak Map Physical memory (bytes)=652795904
+                Peak Map Virtual memory (bytes)=770486272
+                Peak Reduce Physical memory (bytes)=1045270528
+                Peak Reduce Virtual memory (bytes)=1086824448
+        Shuffle Errors
+                BAD_ID=0
+                CONNECTION=0
+                IO_ERROR=0
+                WRONG_LENGTH=0
+                WRONG_MAP=0
+                WRONG_REDUCE=0
+        File Input Format Counters
+                Bytes Read=6509070934
+        File Output Format Counters
+                Bytes Written=75
+2022-12-07 08:01:02,589 INFO streaming.StreamJob: Output directory: /scripts/output-data/capital-letter-counter

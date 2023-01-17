@@ -1,0 +1,141 @@
+import tkinter as tk
+from PIL import ImageTk, Image
+import pandas as pd
+import numpy as np
+import cufflinks as cf
+import chart_studio.plotly as py
+import seaborn as sns
+import plotly.express as px
+
+#GLOBAL VARIABLES
+HEIGHT = 810
+WIDTH = 1000
+#CREATING THE APP WINDOW
+window = tk.Tk()
+window.title("PLAN YOUR PERFECT VACATION")
+window.minsize(height = str(HEIGHT), width = str(WIDTH))
+window.maxsize(height = str(HEIGHT), width = str(WIDTH))
+
+def main_menu():
+    
+  
+    
+    def CLC_analisys():
+
+        def button_6G_create():
+            display_image()
+        def button_100G_create():
+            display_image()
+
+        def display_image():
+            frame.picture = ImageTk.PhotoImage(Image.open('grafiki/fig1.png'))
+            frame.label = tk.Label(frame, image=frame.picture)
+            frame.label.pack()
+
+
+        CLC_widnow = tk.Toplevel(window)
+        CLC_widnow.title("Capital Letter Counter Analisys")
+        CLC_widnow.minsize(height = str(HEIGHT), width=str(WIDTH))
+        CLC_widnow.maxsize(height = str(HEIGHT), width=str(WIDTH))
+        CLC_widnow.grab_set()
+        
+        #TWORZENIE NAPISU I PRZYCISKÓW
+        label_CLC_analisys = tk.Label(CLC_widnow, text = "Capital Letter Counter", height = str(0), width = str(0), font = ("timesnewroman", 20, "bold"))
+        label_add_data = tk.Label(CLC_widnow, text = "Dodaj dane", height = str(0), width = str(0), font = ("timesnewroman", 15, "bold"))
+        button_6G = tk.Button(CLC_widnow, text="6 G", width='5', height='1', font = ("timesnewroman", 15, 'bold'), command=lambda: button_6G_create())
+        button_100G = tk.Button(CLC_widnow, text="100 G", width='5', height='1', font = ("timesnewroman", 15, 'bold'), command=lambda: button_100G_create())
+
+        przycisk_algorytm1 = tk.Button(CLC_widnow, text="Algorytm 1", width='15', height='3', font = ("timesnewroman", 15, 'bold'), command=lambda: non())
+        przycisk_algorytm2 = tk.Button(CLC_widnow, text="Algorytm 2", width='15', height='3', font = ("timesnewroman", 15, 'bold'), command=lambda: non())
+        przycisk_wyczyść = tk.Button(CLC_widnow, text="Wyczyść", width='15', height='3', font = ("timesnewroman", 15, 'bold'), command=lambda: non())
+        przycisk_powrót = tk.Button(CLC_widnow, text="Powrót", width='15', height='3', font = ("timesnewroman", 15, 'bold'), command=lambda: CLC_widnow.destroy())
+
+
+        #TWORZENIE KOMUNIKATU
+        
+
+        label_CLC_analisys.pack()
+        label_CLC_analisys.place(x = WIDTH/2 - 300, y = HEIGHT/2 - 350, anchor="center")
+        label_add_data.pack()
+        label_add_data.place(x = WIDTH/2 + 350, y = HEIGHT/2 - 300, anchor="center")
+        button_6G.pack()
+        button_6G.place(x = WIDTH/2 + 320, y = HEIGHT/2 - 250, anchor="center")
+        button_100G.pack()
+        button_100G.place(x = WIDTH/2 + 420, y = HEIGHT/2 - 250, anchor="center")
+
+        przycisk_algorytm1.pack()
+        przycisk_algorytm1.place(x=WIDTH/2 + 580, y=HEIGHT/2, anchor="center")
+        przycisk_algorytm2.pack()
+        przycisk_algorytm2.place(x=WIDTH/2 + 580, y=HEIGHT/2 + 100, anchor="center")
+        przycisk_wyczyść.pack()
+        przycisk_wyczyść.place(x=WIDTH/2 + 580, y=HEIGHT/2 + 200, anchor="center")
+        przycisk_powrót.pack()
+        przycisk_powrót.place(x=WIDTH/2 + 580, y=HEIGHT/2 + 300, anchor="center")
+
+        frame = tk.Frame(CLC_widnow, highlightthickness = 2,  width=600, height=600, highlightbackground = "black")
+        frame.pack()
+        frame.place( x = WIDTH/2 - 600, y = HEIGHT/2 - 400, anchor='center', relx=0.5, rely=0.5)
+ 
+
+    def non():
+        print("non")
+
+    main_menu_window = tk.Frame(window, height = str(HEIGHT), width = str(WIDTH))
+
+    #CREATING BUTTONS AND TEXTS
+    main_menu_text = tk.Label(main_menu_window, text = "MAIN MENU", height = str(0), width = str(0), font = ("timesnewroman", 20, "bold"))
+    button_CLC = tk.Button(main_menu_window, text = "Capital Letter Counter", width = '40', height = '3', font = ("timesnewroman", 15, 'bold'), command = lambda: CLC_analisys())
+    button_DEC = tk.Button(main_menu_window, text = "Digits End Counter", width = '40', height = '3', font = ("timesnewroman", 15, 'bold'), command = lambda: non())
+    button_DSC = tk.Button(main_menu_window, text = "Digits Start Counter", width = '40', height = '3', font = ("timesnewroman", 15, 'bold'), command = lambda: non())
+    button_DLC = tk.Button(main_menu_window, text = "Duplicated/Trippled Charakters Counter", width = '40', height = '3', font = ("timesnewroman", 15, 'bold'), command = lambda: non())
+    button_finish = tk.Button(main_menu_window, text = "Finish", width = '40', height = '3', font = ("timesnewroman", 15, 'bold'), command = lambda: window.destroy())
+
+    main_menu_text.pack()
+    main_menu_text.place(x = WIDTH/2, y = HEIGHT/2 - 300, anchor = "center")
+    button_CLC.pack()
+    button_CLC.place(x = WIDTH/2, y = HEIGHT/2 - 200, anchor = "center")
+    button_DEC.pack()
+    button_DEC.place(x = WIDTH/2, y = HEIGHT/2 - 100, anchor = "center")
+    button_DSC.pack()
+    button_DSC.place(x = WIDTH/2, y = HEIGHT/2, anchor = "center")
+    button_DLC.pack()
+    button_DLC.place(x = WIDTH/2, y = HEIGHT/2 + 100, anchor = "center")
+    button_finish.pack()
+    button_finish.place(x = WIDTH/2, y = HEIGHT/2 + 200, anchor = "center")
+    
+    main_menu_window.pack()
+
+""" myfile =  open('6G_CLC.txt', 'r')
+data = myfile.read()
+arr_op_1 = data.split()
+arr_1  =  np.random.randn(6, 3)
+myfile.close
+myfile =  open('100G_CLC.txt', 'r')
+data = myfile.read()
+arr_op_2 = data.split()
+myfile.close
+
+for i in range(0, 6):
+    a_1 = arr_op_1[i].split(":")
+    a_2 = arr_op_2[i].split(":")
+    arr_1[i][0] = int(a_1[1]) 
+    arr_1[i][1] = int(a_2[1])
+    arr_1[i][2] = i
+
+df_CLC = pd.DataFrame(arr_1, columns = ['6G', '100G', 'Amount'], dtype = 'int64')
+#print(df_CLC)
+ """
+main_menu()
+window.mainloop()
+
+
+
+
+""" fig = px.bar(df_CLC, x = 'Amount', y = ['6G', '100G'], labels = {'x': 'Ilośc wielkich liter w haśle', 'y':'Liczba haseł'}, text = 'value', barmode = 'group')
+            fig.update_traces(texttemplate = '%{text:.2s}', textposition = 'outside')
+            fig
+            fig.write_image("grafiki/fig1.png") """
+            """ img = ImageTk.PhotoImage(Image.open('grafiki/fig1.png'))
+            lbl = tk.Label(CLC_widnow, image = img)
+            lbl.pack()
+            lbl.place(x = HEIGHT/2, y = WIDTH/2) """
